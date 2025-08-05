@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 40px 200px;
+}
+
+nav a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a.active {
+    border: 1px solid white;
+}
