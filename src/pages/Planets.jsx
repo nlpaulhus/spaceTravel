@@ -1,15 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import SpaceTravelApi from "../services/SpaceTravelApi";
-import PlanetBox from "./PlanetBox";
+import PlanetBox from "../components/PlanetBox";
 import "./Planets.css";
 
 export const Planets = () => {
   const planets = useLoaderData();
   return (
     <>
-      <div className="buildPlanet">
-        <a href="/planets/build">🏗️ Build a Planet</a>
-      </div>
       {planets.map((planet) => (
         <PlanetBox
           pictureUrl={planet.pictureUrl}

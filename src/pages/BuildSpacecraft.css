@@ -1,0 +1,33 @@
+.buildSpacecraft {
+    margin: 0px 50px;
+  
+}
+
+.buildSpacecraftFormDiv {
+  border: 1px solid white;
+  margin: 25px 50px;
+  padding: 10px;
+}
+
+  .buildSpacecraftForm {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  .buildSpacecraftForm input, textarea {
+    border: 1px solid white;
+    margin: 5px;
+  }
+
+  .buildSpacecraftForm input::placeholder, textarea::placeholder {
+    color: lightgrey;
+    text-align: left;
+    font-family:'Arial';
+  }
+
+  .buildSpacecraftForm button {
+    background-color: green;
+    margin: 5px;
+
+  }

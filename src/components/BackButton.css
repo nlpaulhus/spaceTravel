@@ -1,0 +1,8 @@
+.backButton {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.backButton:hover {
+    border: 1px solid green;
+}

@@ -6,9 +6,24 @@ const NavBar = () => {
     <div>
       <header>
         <nav>
-          <NavLink to="/">🌎Home</NavLink>
-          <NavLink to="/spacecrafts">🚀Spacecrafts</NavLink>
-          <NavLink to="/planets">🪐Planets</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            🌎Home
+          </NavLink>
+          <NavLink
+            to="/spacecrafts"
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            🚀Spacecrafts
+          </NavLink>
+          <NavLink
+            to="/planets"
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            🪐Planets
+          </NavLink>
         </nav>
       </header>
     </div>

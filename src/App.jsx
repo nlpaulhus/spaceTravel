@@ -7,13 +7,12 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import HomePage from "./components/HomePage";
-import { Planets, planetsLoader } from "./components/Planets";
-import { SpaceCrafts, spacecraftsLoader } from "./components/SpaceCrafts";
+import HomePage from "./pages/HomePage";
+import { Planets, planetsLoader } from "./pages/Planets";
+import { SpaceCrafts, spacecraftsLoader } from "./pages/SpaceCrafts";
 import NavBar from "./components/NavBar";
-import BuildPlanet from "./components/BuildPlanet";
-import BuildSpaceCraft from "./components/BuildSpaceCraft";
-import { SpaceCraft, spacecraftLoader } from "./components/SpaceCraft";
+import BuildSpacecraft from "./pages/BuildSpaceCraft";
+import { SpaceCraft, spacecraftLoader } from "./pages/SpaceCraft";
 
 const Layout = () => (
   <>
@@ -31,14 +30,13 @@ const routes = createRoutesFromElements(
       element={<SpaceCrafts />}
       loader={spacecraftsLoader}
     />
-    <Route exact path="/spacecrafts/build" element={<BuildSpaceCraft />} />
+    <Route exact path="/spacecrafts/build" element={<BuildSpacecraft />} />
     <Route
       path="spacecrafts/:id"
       element={<SpaceCraft />}
       loader={spacecraftLoader}
     />
     <Route path="/planets" element={<Planets />} loader={planetsLoader} />
-    <Route path="/planets/build" element={<BuildPlanet />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Route>
 );

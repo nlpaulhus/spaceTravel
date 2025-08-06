@@ -1,4 +1,4 @@
-import { PageFunction } from "./PageFunction";
+import { PageFunction } from "../components/PageFunction";
 
 const HomePage = () => {
   const pageFunctions = [
