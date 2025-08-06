@@ -1,0 +1,10 @@
+.buildPlanet a {
+    border: 1px solid white;
+    text-decoration: none;
+    margin: 25px 50px;
+    padding: 10px;
+}
+
+.buildPlanet :hover {
+    border: 1px solid green;
+}

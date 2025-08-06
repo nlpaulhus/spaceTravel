@@ -1,8 +1,9 @@
 .craftBox {
     border: 1px solid white;
     margin: 25px 50px;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .craftBox img {

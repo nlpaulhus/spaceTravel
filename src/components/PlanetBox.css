@@ -19,3 +19,6 @@ flex-direction: row;
     text-align: center;
 }
 
+.planetInfo:hover {
+    border: 1px dotted green;
+}
