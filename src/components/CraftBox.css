@@ -1,0 +1,41 @@
+.craftBox {
+    border: 1px solid white;
+    margin: 25px 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.craftBox img {
+    width: 70px;
+    height: 70px;
+    border: 1px dotted white;
+    padding: 10px;
+    margin: 20px;
+}
+
+.craftText {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+
+.destroyButton {
+    text-decoration: none;
+    padding: 10px;
+    margin: 20px;
+  
+}
+
+.destroyButton a {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.imageBox :hover {
+    border:1px dotted green;
+}
+
+.destroyButton :hover {
+    border: 1px solid green;
+}

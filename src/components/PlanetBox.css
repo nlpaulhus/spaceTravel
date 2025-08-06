@@ -1,0 +1,21 @@
+.planetBox {
+    display: flex;
+    border: 1px solid white;
+    margin: 25px 50px;
+flex-direction: row;
+}
+
+.planetInfo img {
+    height: 70px;
+    width: 70px;
+}
+
+.planetInfo {
+    border: 1px dotted white;
+    margin: 10px;
+    padding: 5px;
+    width: 150px;
+    height: 110px;
+    text-align: center;
+}
+

@@ -1,11 +1,11 @@
-p {
+.functionBox p {
     border: 1px dotted white;
     font-weight: 100;
     padding: 20px;
     text-align: start;
 }
 
-h2 {
+.functionBox h2 {
     text-align: start;
     margin: 10px 0;
 }

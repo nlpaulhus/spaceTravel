@@ -1,0 +1,14 @@
+.buildLink a {
+    text-decoration: none;
+     border: 1px solid white;
+     padding: 3px;
+}
+
+.buildLink {
+    text-align: start;
+    margin: 0 50px;
+}
+
+.buildLink :hover {
+    border: 1px solid green;
+}
