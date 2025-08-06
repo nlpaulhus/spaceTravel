@@ -13,7 +13,7 @@ import { SpaceCrafts, spacecraftsLoader } from "./components/SpaceCrafts";
 import NavBar from "./components/NavBar";
 import BuildPlanet from "./components/BuildPlanet";
 import BuildSpaceCraft from "./components/BuildSpaceCraft";
-import SpaceCraft from "./components/SpaceCraft";
+import { SpaceCraft, spacecraftLoader } from "./components/SpaceCraft";
 
 const Layout = () => (
   <>
@@ -26,12 +26,17 @@ const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<HomePage />} />
     <Route
+      exact
       path="/spacecrafts"
       element={<SpaceCrafts />}
       loader={spacecraftsLoader}
     />
-    <Route path="/spacecrafts/build" element={<BuildSpaceCraft />} />
-    <Route path="spacecrafts/:id" element={<SpaceCraft />} />
+    <Route exact path="/spacecrafts/build" element={<BuildSpaceCraft />} />
+    <Route
+      path="spacecrafts/:id"
+      element={<SpaceCraft />}
+      loader={spacecraftLoader}
+    />
     <Route path="/planets" element={<Planets />} loader={planetsLoader} />
     <Route path="/planets/build" element={<BuildPlanet />} />
     <Route path="*" element={<Navigate to="/" replace />} />

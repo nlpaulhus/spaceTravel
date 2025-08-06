@@ -35,6 +35,7 @@ const HomePage = () => {
       </h1>
       {pageFunctions.map((pageFunction) => (
         <PageFunction
+          key={pageFunction.index}
           title={pageFunction.title}
           description={pageFunction.description}
         />

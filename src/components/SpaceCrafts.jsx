@@ -11,12 +11,7 @@ export function SpaceCrafts() {
         <a href="/spacecrafts/build">🏗️ Build a Spacecraft</a>
       </div>
       {spacecrafts.map((craft) => (
-        <CraftBox
-          key={craft.id}
-          name={craft.name}
-          capacity={craft.capacity}
-          pictureUrl={craft.pictureUrl}
-        />
+        <CraftBox key={craft.id} craft={craft} />
       ))}
     </>
   );
