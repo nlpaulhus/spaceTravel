@@ -1,11 +1,24 @@
 import "./CraftBox.css";
 import { useNavigate } from "react-router-dom";
+import SpaceTravelApi from "../services/SpaceTravelApi";
 
 const CraftBox = ({ craft }) => {
   const navigate = useNavigate();
 
   function detailsHandler() {
     navigate(`/spacecrafts/${craft.id}`);
+  }
+
+  async function destroyHandler(e) {
+    e.preventDefault();
+    console.log("click");
+    console.log(craft.id);
+    try {
+      let res = await SpaceTravelApi.destroySpacecraftById({ id: craft.id });
+      window.location.reload();
+    } catch (err) {
+      return err;
+    }
   }
 
   return (
@@ -19,11 +32,15 @@ const CraftBox = ({ craft }) => {
         ></img>
       </div>
       <div className="craftText">
-        <p>{craft.name}</p>
-        <p>Capacity:{craft.capacity}</p>
+        <div>
+          <h1>{craft.name}</h1>
+        </div>
+        <div>
+          <p>Capacity:{craft.capacity}</p>
+        </div>
       </div>
       <div className="destroyButton">
-        <a>💥Destroy</a>
+        <a onClick={destroyHandler}>💥Destroy</a>
       </div>
     </div>
   );

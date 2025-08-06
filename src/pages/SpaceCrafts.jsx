@@ -20,7 +20,6 @@ export function SpaceCrafts() {
 export const spacecraftsLoader = async () => {
   try {
     const res = await SpaceTravelApi.getSpacecrafts();
-    console.log(res.data);
     return res.data;
   } catch (err) {
     return err;

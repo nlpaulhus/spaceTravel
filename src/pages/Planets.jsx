@@ -22,7 +22,6 @@ export const Planets = () => {
 export const planetsLoader = async () => {
   try {
     const res = await SpaceTravelApi.getPlanets();
-    console.log(res.data);
     return res.data;
   } catch (err) {
     return err;

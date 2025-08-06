@@ -14,10 +14,9 @@
     margin: 20px;
 }
 
-.craftText {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+.craftText div {
+    padding: 20px;
+    display: block;
 }
 
 
