@@ -1,8 +1,23 @@
 import "./CurrentCraft.css";
 
-function CurrentCraft({ craft }) {
+function CurrentCraft({ craft, setStateData, stateData }) {
+  const handleClick = (e) => {
+    const spacecraftId = e.currentTarget.id;
+    setStateData({ ...stateData, spacecraftId: spacecraftId });
+  };
+
+  const selectedCraftId = stateData.spacecraftId;
+  const currentCraftId = craft.id;
+
+
   return (
-    <div className="currentCraftBox">
+    <div
+      onClick={handleClick}
+      className={`currentCraftBox ${
+        selectedCraftId === currentCraftId ? "selected" : ""
+      }`}
+      id={craft.id}
+    >
       <img
         src={
           craft.pictureUrl ||

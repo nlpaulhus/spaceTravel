@@ -2,3 +2,11 @@
     background-color: black;
     color:white;
 }
+
+.selected {
+    border: 1px dotted red;
+}
+
+.unselected {
+    border: 1px dotted white;
+}

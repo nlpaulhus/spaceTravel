@@ -12,7 +12,3 @@
     border: 1px dotted white;
     padding: 4px;
 }
-
-.currentCraftBox img:hover {
-    border: 1px dotted green;
-}

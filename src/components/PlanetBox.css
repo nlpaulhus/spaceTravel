@@ -19,9 +19,6 @@
     text-align: center;
 }
 
-.planetInfo:hover {
-    border: 1px dotted green;
-}
 
 .spacecraftsOnPlanet {
 display: flex;

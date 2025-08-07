@@ -1,6 +1,5 @@
 .buildSpacecraft {
     margin: 0px 50px;
-  
 }
 
 .buildSpacecraftFormDiv {
@@ -30,4 +29,11 @@
     background-color: green;
     margin: 5px;
 
+  }
+
+  .buildSpacecraft span {
+    color: red;
+    padding: 5px;
+    display: block;
+    margin: 0px 50px;
   }

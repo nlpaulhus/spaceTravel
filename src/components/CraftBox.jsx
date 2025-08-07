@@ -13,7 +13,7 @@ const CraftBox = ({ craft }) => {
     e.preventDefault();
     try {
       let res = await SpaceTravelApi.destroySpacecraftById({ id: craft.id });
-      window.location.reload();
+      navigate("/spacecrafts");
     } catch (err) {
       return err;
     }

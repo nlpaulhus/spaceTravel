@@ -1,18 +1,40 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import SpaceTravelApi from "../services/SpaceTravelApi";
 import PlanetBox from "../components/PlanetBox";
-import "./Planets.css";
-import CurrentCraft from "../components/CurrentCraft";
+import { useState, useEffect } from "react";
 
 export const Planets = () => {
   const planetsAndCrafts = useLoaderData();
   const planets = planetsAndCrafts.planets;
   const spacecrafts = planetsAndCrafts.spacecrafts;
 
+  const navigate = useNavigate();
+
+  const initialState = {
+    spacecraftId: null,
+    targetPlanetId: null,
+  };
+
+  let [stateData, setStateData] = useState(initialState);
+
+  if (stateData.spacecraftId !== null && stateData.targetPlanetId !== null) {
+    try {
+      const res = SpaceTravelApi.sendSpacecraftToPlanet(stateData);
+      setStateData(initialState);
+      return navigate("/planets");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {}, [stateData]);
+
   return (
     <>
       {planets.map((planet) => (
         <PlanetBox
+          stateData={stateData}
+          setStateData={setStateData}
           key={planet.id}
           planet={planet}
           spacecrafts={spacecrafts[planet.id]}
