@@ -5,6 +5,7 @@ import {
   RouterProvider,
   Outlet,
   Navigate,
+  useNavigation,
 } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
@@ -13,13 +14,18 @@ import { SpaceCrafts, spacecraftsLoader } from "./pages/SpaceCrafts";
 import NavBar from "./components/NavBar";
 import BuildSpacecraft from "./pages/BuildSpaceCraft";
 import { SpaceCraft, spacecraftLoader } from "./pages/SpaceCraft";
+import Loading from "./components/Loading";
 
-const Layout = () => (
-  <>
-    <NavBar />
-    <Outlet />
-  </>
-);
+const Layout = () => {
+  const navigation = useNavigation();
+
+  return (
+    <>
+      <NavBar />
+      {navigation.state === "loading" ? <Loading /> : <Outlet />}
+    </>
+  );
+};
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<Layout />}>

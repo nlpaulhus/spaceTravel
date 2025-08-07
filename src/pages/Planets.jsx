@@ -1,21 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import SpaceTravelApi from "../services/SpaceTravelApi";
 import PlanetBox from "../components/PlanetBox";
-import { useState, useEffect } from "react";
 import "./Planets.css";
 import CurrentCraft from "../components/CurrentCraft";
 
 export const Planets = () => {
   const planetsAndCrafts = useLoaderData();
-  const planets = planetsAndCrafts.planets.data;
-  const spacecrafts = planetsAndCrafts.spacecrafts.data;
-
-  let planetsData = [[], [], [], [], [], [], [], [], []];
-
-  for (let i = 0; i < spacecrafts.length; i++) {
-    let currentCraftLocation = spacecrafts[i].currentLocation;
-    planetsData[currentCraftLocation].push(spacecrafts[i]);
-  }
+  const planets = planetsAndCrafts.planets;
+  const spacecrafts = planetsAndCrafts.spacecrafts;
 
   return (
     <>
@@ -23,7 +15,7 @@ export const Planets = () => {
         <PlanetBox
           key={planet.id}
           planet={planet}
-          spacecrafts={planetsData[planet.id]}
+          spacecrafts={spacecrafts[planet.id]}
         />
       ))}
     </>
@@ -32,10 +24,21 @@ export const Planets = () => {
 
 export const planetsLoader = async () => {
   try {
-    const planets = await SpaceTravelApi.getPlanets();
-    const spacecrafts = await SpaceTravelApi.getSpacecrafts();
+    const planets = await SpaceTravelApi.getPlanets().then(
+      (planets) => planets.data
+    );
+    const spacecrafts = await SpaceTravelApi.getSpacecrafts().then(
+      (spacecrafts) => spacecrafts.data
+    );
 
-    return { planets: planets, spacecrafts: spacecrafts };
+    let spacecraftsData = [[], [], [], [], [], [], [], [], []];
+
+    for (let i = 0; i < spacecrafts.length; i++) {
+      let currentCraftLocation = spacecrafts[i].currentLocation;
+      spacecraftsData[currentCraftLocation].push(spacecrafts[i]);
+    }
+
+    return { planets: planets, spacecrafts: spacecraftsData };
   } catch (err) {
     return err;
   }
