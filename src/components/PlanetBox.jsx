@@ -1,11 +1,8 @@
 import "./PlanetBox.css";
 import CurrentCraft from "./CurrentCraft";
 
-const PlanetBox = ({ planet, spacecrafts, setStateData, stateData }) => {
-  const planetHandler = (e) => {
-    let planetId = parseInt(e.currentTarget.id);
-    setStateData({ ...stateData, targetPlanetId: planetId });
-  };
+const PlanetBox = ({ planet, spacecrafts, handlePlanetClick, handleCraftClick, stateData }) => {
+
 
   const selectedPlanetId = parseInt(stateData.targetPlanetId);
   const currentPlanet = parseInt(planet.id);
@@ -13,7 +10,7 @@ const PlanetBox = ({ planet, spacecrafts, setStateData, stateData }) => {
   return (
     <div className="planetBox">
       <div
-        onClick={planetHandler}
+        onClick={handlePlanetClick}
         id={planet.id}
         className={`planetInfo ${
           selectedPlanetId === currentPlanet ? "selected" : ""
@@ -28,9 +25,9 @@ const PlanetBox = ({ planet, spacecrafts, setStateData, stateData }) => {
         {spacecrafts.map((spacecraft) => (
           <CurrentCraft
             stateData={stateData}
+            handleCraftClick={handleCraftClick}
             key={spacecraft.id}
             craft={spacecraft}
-            setStateData={setStateData}
           />
         ))}
       </div>

@@ -17,6 +17,7 @@ const BuildSpacecraft = () => {
 
   const [errors, setErrors] = useState({});
 
+  //function to check form data and return errors object
   const validateForm = (data) => {
     const errors = {};
 
@@ -34,6 +35,8 @@ const BuildSpacecraft = () => {
     }
     return errors;
   };
+
+  //on submit, it validates the form and if there are errors, sets them in state, if not it submits the form
 
   const handleSubmit = async (e) => {
     e.preventDefault();

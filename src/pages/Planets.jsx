@@ -17,30 +17,54 @@ export const Planets = () => {
 
   let [stateData, setStateData] = useState(initialState);
 
-  if (stateData.spacecraftId !== null && stateData.targetPlanetId !== null) {
-    try {
-      const res = SpaceTravelApi.sendSpacecraftToPlanet(stateData);
-      setStateData(initialState);
-      return navigate("/planets");
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  const handleCraftClick = (e) => {
+    const spacecraftId = e.currentTarget.id;
+    setStateData({ ...stateData, spacecraftId: spacecraftId });
+  };
 
-  useEffect(() => {}, [stateData]);
+  const handlePlanetClick = (e) => {
+    let planetId = parseInt(e.currentTarget.id);
+    setStateData({ ...stateData, targetPlanetId: planetId });
+  };
+
+  //if a spacecraft and planet have been selected
+
+  useEffect(() => {
+    if (stateData.spacecraftId !== null && stateData.targetPlanetId !== null) {
+      let spacecraftsOnTargetPlanet = spacecrafts[stateData.targetPlanetId];
+      let idsOfPlanetCrafts = [];
+
+      for (const spacecraft of spacecraftsOnTargetPlanet) {
+        idsOfPlanetCrafts.push(spacecraft.id);
+      }
+
+      //only runs if the spacecraft is not already on the selected planet:
+
+      if (idsOfPlanetCrafts.includes(stateData.spacecraftId) === false) {
+        try {
+          const res = SpaceTravelApi.sendSpacecraftToPlanet(stateData);
+          setStateData(initialState);
+          return navigate("/planets");
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+  }, [stateData]);
 
   return (
-    <>
+    <div>
       {planets.map((planet) => (
         <PlanetBox
           stateData={stateData}
-          setStateData={setStateData}
+          handlePlanetClick={handlePlanetClick}
+          handleCraftClick={handleCraftClick}
           key={planet.id}
           planet={planet}
           spacecrafts={spacecrafts[planet.id]}
         />
       ))}
-    </>
+    </div>
   );
 };
 
@@ -52,6 +76,8 @@ export const planetsLoader = async () => {
     const spacecrafts = await SpaceTravelApi.getSpacecrafts().then(
       (spacecrafts) => spacecrafts.data
     );
+
+    //organizes spacecrafts based on which planet they are by planet index
 
     let spacecraftsData = [[], [], [], [], [], [], [], [], []];
 

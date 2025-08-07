@@ -1,4 +1,5 @@
 import { PageFunction } from "../components/PageFunction";
+import { nanoid } from "nanoid";
 
 const HomePage = () => {
   const pageFunctions = [
@@ -35,7 +36,7 @@ const HomePage = () => {
       </h1>
       {pageFunctions.map((pageFunction) => (
         <PageFunction
-          key={pageFunction.index}
+          key={nanoid()}
           title={pageFunction.title}
           description={pageFunction.description}
         />
