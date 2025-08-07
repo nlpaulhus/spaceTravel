@@ -1,9 +1,13 @@
 import "./PlanetBox.css";
 import CurrentCraft from "./CurrentCraft";
 
-const PlanetBox = ({ planet, spacecrafts, handlePlanetClick, handleCraftClick, stateData }) => {
-
-
+const PlanetBox = ({
+  planet,
+  spacecrafts,
+  handlePlanetClick,
+  handleCraftClick,
+  stateData,
+}) => {
   const selectedPlanetId = parseInt(stateData.targetPlanetId);
   const currentPlanet = parseInt(planet.id);
 

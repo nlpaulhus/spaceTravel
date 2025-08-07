@@ -53,7 +53,7 @@ export const Planets = () => {
   }, [stateData]);
 
   return (
-    <div>
+    <>
       {planets.map((planet) => (
         <PlanetBox
           stateData={stateData}
@@ -64,7 +64,7 @@ export const Planets = () => {
           spacecrafts={spacecrafts[planet.id]}
         />
       ))}
-    </div>
+    </>
   );
 };
 
