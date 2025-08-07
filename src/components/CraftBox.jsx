@@ -11,8 +11,6 @@ const CraftBox = ({ craft }) => {
 
   async function destroyHandler(e) {
     e.preventDefault();
-    console.log("click");
-    console.log(craft.id);
     try {
       let res = await SpaceTravelApi.destroySpacecraftById({ id: craft.id });
       window.location.reload();
