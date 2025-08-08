@@ -1,5 +1,5 @@
 import "./PlanetBox.css";
-import CurrentCraft from "./CurrentCraft";
+import CurrentCraft from "../CurrentCraft/CurrentCraft";
 
 const PlanetBox = ({
   planet,

@@ -1,8 +1,8 @@
-import BackButton from "../components/BackButton";
+import BackButton from "../../components/BackButton/BackButton";
 import "./BuildSpacecraft.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SpaceTravelApi from "../services/SpaceTravelApi";
+import SpaceTravelApi from "../../services/SpaceTravelApi";
 
 const BuildSpacecraft = () => {
   let initialState = {

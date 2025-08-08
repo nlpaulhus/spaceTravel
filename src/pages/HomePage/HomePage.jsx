@@ -1,4 +1,4 @@
-import { PageFunction } from "../components/PageFunction";
+import { PageFunction } from "../../components/PageFunction/PageFunction";
 import { nanoid } from "nanoid";
 
 const HomePage = () => {

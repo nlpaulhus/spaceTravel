@@ -1,6 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
-import SpaceTravelApi from "../services/SpaceTravelApi";
-import PlanetBox from "../components/PlanetBox";
+import SpaceTravelApi from "../../services/SpaceTravelApi";
+import PlanetBox from "../../components/PlanetBox/PlanetBox"
 import { useState, useEffect } from "react";
 
 export const Planets = () => {

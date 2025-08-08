@@ -6,13 +6,16 @@ import {
   useNavigation,
 } from "react-router-dom";
 
-import HomePage from "../pages/HomePage";
-import { Planets, planetsLoader } from "../pages/Planets";
-import { SpaceCrafts, spacecraftsLoader } from "../pages/SpaceCrafts";
-import NavBar from "../components/NavBar";
-import BuildSpacecraft from "../pages/BuildSpaceCraft";
-import { SpaceCraft, spacecraftLoader } from "../pages/SpaceCraft";
-import Loading from "../components/Loading";
+import HomePage from "../pages/HomePage/HomePage";
+import { Planets, planetsLoader } from "../pages/Planets/Planets";
+import {
+  SpaceCrafts,
+  spacecraftsLoader,
+} from "../pages/SpaceCrafts/SpaceCrafts";
+import NavBar from "../components/NavBar/NavBar";
+import BuildSpacecraft from "../pages/BuildSpacecraft/BuildSpaceCraft";
+import { SpaceCraft, spacecraftLoader } from "../pages/SpaceCraft/SpaceCraft";
+import Loading from "../components/Loading/Loading";
 
 const Layout = () => {
   const navigation = useNavigation();

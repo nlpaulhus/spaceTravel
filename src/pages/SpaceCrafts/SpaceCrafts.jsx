@@ -1,7 +1,8 @@
 import "./SpaceCrafts.css";
 import { useLoaderData } from "react-router-dom";
-import SpaceTravelApi from "../services/SpaceTravelApi";
-import CraftBox from "../components/CraftBox";
+import SpaceTravelApi from "../../services/SpaceTravelApi";
+
+import CraftBox from "../../components/CraftBox/CraftBox";
 
 export function SpaceCrafts() {
   const spacecrafts = useLoaderData();
