@@ -14,6 +14,7 @@ const PlanetBox = ({
   return (
     <div className="planetBox">
       <div
+        data-testid={`planet ${planet.id}`}
         onClick={handlePlanetClick}
         id={planet.id}
         className={`planetInfo ${

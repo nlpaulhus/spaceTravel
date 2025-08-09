@@ -6,6 +6,7 @@ function CurrentCraft({ craft, handleCraftClick, stateData }) {
 
   return (
     <div
+     data-testid={`craft ${craft.name}`}
       onClick={handleCraftClick}
       className={`currentCraftBox ${
         selectedCraftId === currentCraftId ? "selected" : ""
