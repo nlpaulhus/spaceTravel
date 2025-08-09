@@ -63,31 +63,35 @@ const BuildSpacecraft = () => {
     <div className="buildSpacecraft">
       <BackButton />
       <div className="buildSpacecraftFormDiv">
-        <form className="buildSpacecraftForm">
+        <form name="buildSpacecraftForm" className="buildSpacecraftForm">
           <input
             type="text"
             name="name"
             placeholder="Spacecraft Name"
+            value={spacecraftData.name}
             onChange={handleChange}
           />
           <input
             type="number"
             name="capacity"
             placeholder="Capacity"
+            vallue={spacecraftData.capacity}
             onChange={handleChange}
           />
           <textarea
             name="description"
             placeholder="Description"
+            value={spacecraftData.description}
             onChange={handleChange}
           />
           <input
             type="text"
             name="pictureUrl"
-            placeholder="pictureUrl (optional)"
+            placeholder="Optional Picture URL"
+            value={spacecraftData.pictureUrl}
             onChange={handleChange}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button name="buildButton" role="button" type="submit" onClick={handleSubmit}>
             BUILD
           </button>
         </form>

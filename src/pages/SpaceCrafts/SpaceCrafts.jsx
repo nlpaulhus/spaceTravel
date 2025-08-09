@@ -4,7 +4,7 @@ import SpaceTravelApi from "../../services/SpaceTravelApi";
 
 import CraftBox from "../../components/CraftBox/CraftBox";
 
-export function SpaceCrafts() {
+export const SpaceCrafts = () => {
   const spacecrafts = useLoaderData();
   return (
     <>
@@ -16,7 +16,7 @@ export function SpaceCrafts() {
       ))}
     </>
   );
-}
+};
 
 export const spacecraftsLoader = async () => {
   try {
